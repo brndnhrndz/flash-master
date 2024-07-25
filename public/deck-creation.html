@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="../src/index.css">
+
+        <title>FlashMaster</title>
+    </head>
+
+    <body>
+        <div>
+            <form action="" method="GET">
+                <label for="deck-name-input">Deck Name:</label>
+                <input type="text" id="deck-name-input" name="deck-name" placeholder="Enter a deck name:"
+                    autocomplete="off">
+
+                <div id="card-faces-pane">
+                    <div id="front-face"></div>
+                    <div id="back-face"></div>
+                </div>
+
+                <label for="front-text-input">Front:</label>
+                <input type="text" id="front-text-input" name="front-text" autocomplete="off">
+
+                <label for="back-text-input">Back:</label>
+                <input type="text" id="back-text-input" name="back-text" autocomplete="off">
+
+                <!-- user should save current card before traversing deck -->
+                <button type="button">Previous</button>
+                <button type="button">Next</button>
+
+                <!-- saves card and prompts user to define another -->
+                <button type="button">Save Card</button>
+                <!-- deletes the current card -->
+                <button type="button">Remove Card</button>
+                <!-- moves to decks view -->
+                <a href="./deck-collection.html"><button type="button">Finish</button></a>
+            </form>
+        </div>
+    </body>
+</html>
