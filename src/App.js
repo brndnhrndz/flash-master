@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-import './assets/App.css';
-
 import Landing from './pages/Landing/Landing.js'
 import DeckCreation from './pages/DeckCreation/DeckCreation.js'
 import DeckCollection from './pages/DeckCollection/DeckCollection.js'
