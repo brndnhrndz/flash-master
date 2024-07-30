@@ -25,7 +25,8 @@ const App = () => {
         return <DeckCollection
             setShowDeckCollection={setShowDeckCollection}
             setShowDeckCreation={setShowDeckCreation}
-            setShowCardView={setShowCardView} />;
+            setShowCardView={setShowCardView}
+            setShowLanding={setShowLanding} />;
     } else if (showCardView) {
         return <CardView
             setShowCardView={setShowCardView}
