@@ -56,16 +56,8 @@ const DeckCreation = (props) => {
     }
 
     const handleFinish = () => {
-        // props.setShowDeckCreation(false);
-        // props.setShowDeckCollection(true);
-
-        const deck = {
-            deckName: deckName,
-            cards: cards,
-        }
-
-        // upload deck to database
-        console.log(deck);
+        props.setShowDeckCreation(false);
+        props.setShowDeckCollection(true);
     }
 
     return (
