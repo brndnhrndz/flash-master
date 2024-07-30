@@ -1,8 +1,6 @@
 import React from 'react'
 
 const DeckCollection = (props) => {
-    // Extract decks from database and render to screen
-
     const handleDeckIconClick = () => {
         props.setShowDeckCollection(false);
         props.setShowCardView(true);
@@ -13,6 +11,11 @@ const DeckCollection = (props) => {
         props.setShowDeckCreation(true);
     }
 
+    const handleLanding = () => {
+        props.setShowDeckCollection(false);
+        props.setShowLanding(true);
+    }
+
     return (
         <div id='deck-collection'>
             <h1>Deck Collection</h1>
@@ -21,6 +24,7 @@ const DeckCollection = (props) => {
             <button type='button' onClick={handleCreateDeck}>Create</button>
             <button type='button'>Sort</button>
             <button type='button'>Delete</button>
+            <button type='button' onClick={handleLanding}>Landing</button>
 
             <div id='deck-collection-icons'>
                 <div id='deck-icon' onClick={handleDeckIconClick}></div>
