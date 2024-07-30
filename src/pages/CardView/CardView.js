@@ -20,7 +20,7 @@ const CardView = (props) => {
 
             <button type='button'>Edit</button>
 
-            <div class='card-face'></div>
+            <div className='card-face'></div>
 
             <button type='button'>Flip</button>
             <button type='button'>Previous</button>
