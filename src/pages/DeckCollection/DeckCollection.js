@@ -1,16 +1,8 @@
 import React from 'react'
 
+import CollectionContainer from './CollectionContainer.js'
+
 const DeckCollection = (props) => {
-    const handleDeckIconClick = () => {
-        props.setShowDeckCollection(false);
-        props.setShowCardView(true);
-    }
-
-    const handleCreateDeck = () => {
-        props.setShowDeckCollection(false);
-        props.setShowDeckCreation(true);
-    }
-
     const handleLanding = () => {
         props.setShowDeckCollection(false);
         props.setShowLanding(true);
@@ -21,14 +13,13 @@ const DeckCollection = (props) => {
             <h1>Deck Collection</h1>
 
             <button type='button'>Manage Decks</button>
-            <button type='button' onClick={handleCreateDeck}>Create</button>
+            <button type='button'>Create</button>
             <button type='button'>Sort</button>
             <button type='button'>Delete</button>
+
             <button type='button' onClick={handleLanding}>Landing</button>
 
-            <div id='deck-collection-icons'>
-                <div id='deck-icon' onClick={handleDeckIconClick}></div>
-            </div>
+            <CollectionContainer />
         </div >
     );
 }
