@@ -3,23 +3,3 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-#deck-icon {
-    display: block;
-    background-color: black;
-    height: 80px;
-    width: 60px;
-}
-
-#card-icon {
-    display: block;
-    background-color: black;
-    height: 80px;
-    width: 60px;
-}
-
-.card-face {
-    background-color: black;
-    height: 80px;
-    width: 60px;
-}
