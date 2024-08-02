@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import DeckItem from './DeckItem.js'
+
 const CollectionContainer = () => {
     const [decks, setDecks] = useState([
         // verbs
@@ -46,7 +48,7 @@ const CollectionContainer = () => {
             {
                 // replace with DeckItem component
                 decks.map((deck, index) => (
-                    <div key={index}>{deck.deckName}</div>
+                    <DeckItem deck={deck} />
                 ))
             }
         </div>
