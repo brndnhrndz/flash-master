@@ -16,8 +16,7 @@ const App = () => {
     if (showLanding) {
         return <Landing
             setShowLanding={setShowLanding}
-            setShowDeckCreation={setShowDeckCreation}
-            setShowDeckCollection={setShowDeckCollection} />;
+            setShowDeckCreation={setShowDeckCreation} />;
     } else if (showDeckCreation) {
         return <DeckCreation
             setShowDeckCreation={setShowDeckCreation}
