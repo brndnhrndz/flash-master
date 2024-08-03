@@ -1,5 +1,7 @@
 import React from 'react';
 
+import CardFace from './CardFace.js';
+
 const CardView = ({ activeDeck, updateState }) => {
     const handleDeckContentsClick = () => {
         updateState({
@@ -15,6 +17,8 @@ const CardView = ({ activeDeck, updateState }) => {
         });
     };
 
+    let currCard = activeDeck.cards[0];
+
     return (
         <div id='card-view'>
             <h1>Card View</h1>
@@ -24,9 +28,7 @@ const CardView = ({ activeDeck, updateState }) => {
 
             <button type='button'>Edit</button>
 
-            <div className='card-face'>
-                {activeDeck.cards[0].front}
-            </div>
+            <CardFace currCard={currCard} />
 
             <button type='button'>Flip</button>
             <button type='button'>Previous</button>
