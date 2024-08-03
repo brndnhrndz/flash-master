@@ -13,6 +13,7 @@ const App = () => {
         showDeckCollection: false,
         showCardView: false,
         showDeckContents: false,
+        activeDeck: {},
         decks: [
             // verbs
             {
@@ -70,7 +71,7 @@ const App = () => {
     } else if (state.showDeckCollection) {
         return <DeckCollection decks={state.decks} updateState={updateState} />;
     } else if (state.showCardView) {
-        return <CardView updateState={updateState} />;
+        return <CardView activeDeck={state.activeDeck} updateState={updateState} />;
     } else if (state.showDeckContents) {
         return <DeckContents updateState={updateState} />;
     }
