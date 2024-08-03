@@ -1,4 +1,5 @@
-import { React, useState } from 'react';
+import React, { useState } from 'react';
+import '../../assets/DeckCreation.css'
 
 const DeckCreation = ({ updateState }) => {
     const [deckName, setDeckName] = useState('');

@@ -3,15 +3,3 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.deck-item,
-.card-face {
-    height: 70px;
-    width: 50px;
-    border: 1px solid red;
-
-}
-
-.deck-item:hover {
-    cursor: pointer
-}

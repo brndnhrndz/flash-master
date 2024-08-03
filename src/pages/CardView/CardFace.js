@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../assets/CardFace.css'
 
 const CardFace = ({ state }) => {
     return (

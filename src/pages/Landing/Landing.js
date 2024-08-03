@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../assets/Landing.css'
 
 const Landing = ({ updateState }) => {
     const handleCreateDeckClick = () => {

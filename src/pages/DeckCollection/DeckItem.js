@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../assets/DeckItem.css'
 
 const DeckItem = ({ deck, updateState }) => {
     const handleDeckItemClick = () => {

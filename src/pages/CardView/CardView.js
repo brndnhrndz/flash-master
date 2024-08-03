@@ -1,5 +1,6 @@
 import React from 'react';
 import CardFace from './CardFace.js';
+import '../../assets/CardView.css'
 
 const CardView = ({ state, updateState }) => {
     const handleDeckContentsClick = () => {
