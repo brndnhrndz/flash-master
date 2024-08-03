@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-.deck-item {
+.deck-item,
+.card-face {
     height: 70px;
     width: 50px;
     border: 1px solid red;
