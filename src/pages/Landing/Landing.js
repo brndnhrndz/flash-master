@@ -1,14 +1,14 @@
 import React from 'react';
 
 const Landing = ({ updateState }) => {
-    const handleCreateDeck = () => {
+    const handleCreateDeckClick = () => {
         updateState({
             showLanding: false,
             showDeckCreation: true
         });
     };
 
-    const handleShowDecks = () => {
+    const handleShowDecksClick = () => {
         updateState({
             showLanding: false,
             showDeckCollection: true
@@ -19,11 +19,11 @@ const Landing = ({ updateState }) => {
         <div id='landing'>
             <h1>Flash Master</h1>
             <button type='button' name='create-deck-btn'
-                onClick={handleCreateDeck}>
+                onClick={handleCreateDeckClick}>
                 Create Deck
             </button>
             <button type='button' name='show-decks-btn'
-                onClick={handleShowDecks}>
+                onClick={handleShowDecksClick}>
                 Show Decks
             </button>
         </div>

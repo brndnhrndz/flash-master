@@ -3,7 +3,7 @@ import React from 'react';
 import CollectionContainer from './CollectionContainer.js';
 
 const DeckCollection = ({ decks, updateState }) => {
-    const handleLanding = () => {
+    const handleLandingClick = () => {
         updateState({
             showDeckCollection: false,
             showLanding: true
@@ -19,7 +19,7 @@ const DeckCollection = ({ decks, updateState }) => {
             <button type='button'>Sort</button>
             <button type='button'>Delete</button>
 
-            <button type='button' onClick={handleLanding}>Landing</button>
+            <button type='button' onClick={handleLandingClick}>Landing</button>
 
             <CollectionContainer decks={decks} updateState={updateState} />
         </div >

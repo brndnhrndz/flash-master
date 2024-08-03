@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DeckContents = ({ updateState }) => {
-    const handleExitDeckContents = () => {
+    const handleExitDeckContentsClick = () => {
         updateState({
             showDeckContents: false,
             showCardView: true
@@ -13,7 +13,7 @@ const DeckContents = ({ updateState }) => {
             <h1>Deck Contents</h1>
 
             <button type='button'
-                onClick={handleExitDeckContents}>Exit Deck Contents</button>
+                onClick={handleExitDeckContentsClick}>Exit Deck Contents</button>
 
             <button type='button'>Manage Cards</button>
             <button type='button'>Add Card</button>

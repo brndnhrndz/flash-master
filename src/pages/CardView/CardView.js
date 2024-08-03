@@ -1,14 +1,14 @@
 import React from 'react';
 
 const CardView = ({ updateState }) => {
-    const handleDeckContents = () => {
+    const handleDeckContentsClick = () => {
         updateState({
             showCardView: false,
             showDeckContents: true
         });
     };
 
-    const handleReturn = () => {
+    const handleReturnClick = () => {
         updateState({
             showCardView: false,
             showDeckCollection: true
@@ -20,7 +20,7 @@ const CardView = ({ updateState }) => {
             <h1>Card View</h1>
 
             <button type='button'
-                onClick={handleDeckContents}>Deck Contents</button>
+                onClick={handleDeckContentsClick}>Deck Contents</button>
 
             <button type='button'>Edit</button>
 
@@ -30,7 +30,7 @@ const CardView = ({ updateState }) => {
             <button type='button'>Previous</button>
             <button type='button'>Next</button>
 
-            <button type='button' onClick={handleReturn}>Return</button>
+            <button type='button' onClick={handleReturnClick}>Return</button>
         </div >
     );
 };

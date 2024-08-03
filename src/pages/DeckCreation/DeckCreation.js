@@ -19,19 +19,19 @@ const DeckCreation = ({ updateState }) => {
         setBackText(e.target.value);
     };
 
-    const handlePrevCard = () => {
+    const handlePrevCardClick = () => {
         if (currentCardIndex > 0) {
             setCurrentCardIndex(currentCardIndex - 1);
         }
     };
 
-    const handleNextCard = () => {
+    const handleNextCardClick = () => {
         if (currentCardIndex < cards.length - 1) {
             setCurrentCardIndex(currentCardIndex + 1);
         }
     };
 
-    const handleSaveCard = () => {
+    const handleSaveCardClick = () => {
         const newCard = {
             front: frontText,
             back: backText
@@ -43,7 +43,7 @@ const DeckCreation = ({ updateState }) => {
         setBackText('');
     };
 
-    const handleRemoveCard = () => {
+    const handleRemoveCardClick = () => {
         const updatedCards = cards.filter((el, index) => {
             return index !== currentCardIndex;
         });
@@ -55,7 +55,7 @@ const DeckCreation = ({ updateState }) => {
         }
     };
 
-    const handleFinish = () => {
+    const handleFinishClick = () => {
         updateState({
             showDeckCreation: false,
             showDeckCollection: true
@@ -88,13 +88,13 @@ const DeckCreation = ({ updateState }) => {
                     onChange={handleBackTextChange} />
 
                 <button type='button'
-                    onClick={handlePrevCard}>Previous</button>
-                <button type='button' onClick={handleNextCard}>Next</button>
+                    onClick={handlePrevCardClick}>Previous</button>
+                <button type='button' onClick={handleNextCardClick}>Next</button>
                 <button type='button'
-                    onClick={handleSaveCard}>Save Card</button>
+                    onClick={handleSaveCardClick}>Save Card</button>
                 <button type='button'
-                    onClick={handleRemoveCard}>Remove Card</button>
-                <button type='button' onClick={handleFinish}>Finish</button>
+                    onClick={handleRemoveCardClick}>Remove Card</button>
+                <button type='button' onClick={handleFinishClick}>Finish</button>
             </form>
         </div>
     );
