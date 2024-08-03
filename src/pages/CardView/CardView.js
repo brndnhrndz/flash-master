@@ -1,14 +1,18 @@
 import React from 'react';
 
-const CardView = (props) => {
+const CardView = ({ updateState }) => {
     const handleDeckContents = () => {
-        props.setShowCardView(false);
-        props.setShowDeckContents(true);
+        updateState({
+            showCardView: false,
+            showDeckContents: true
+        });
     };
 
     const handleReturn = () => {
-        props.setShowCardView(false);
-        props.setShowDeckCollection(true);
+        updateState({
+            showCardView: false,
+            showDeckCollection: true
+        });
     };
 
     return (

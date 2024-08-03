@@ -7,36 +7,33 @@ import CardView from './pages/CardView/CardView.js';
 import DeckContents from './pages/DeckContents/DeckContents.js';
 
 const App = () => {
-    const [showLanding, setShowLanding] = useState(true);
-    const [showDeckCreation, setShowDeckCreation] = useState(false);
-    const [showDeckCollection, setShowDeckCollection] = useState(false);
-    const [showCardView, setShowCardView] = useState(false);
-    const [showDeckContents, setShowDeckContents] = useState(false);
+    const [state, setState] = useState({
+        showLanding: true,
+        showDeckCreation: false,
+        showDeckCollection: false,
+        showCardView: false,
+        showDeckContents: false
+    });
 
-    if (showLanding) {
-        return <Landing
-            setShowLanding={setShowLanding}
-            setShowDeckCreation={setShowDeckCreation} 
-            setShowDeckCollection={setShowDeckCollection} />;
-    } else if (showDeckCreation) {
-        return <DeckCreation
-            setShowDeckCreation={setShowDeckCreation}
-            setShowDeckCollection={setShowDeckCollection} />;
-    } else if (showDeckCollection) {
-        return <DeckCollection
-            setShowDeckCollection={setShowDeckCollection}
-            setShowDeckCreation={setShowDeckCreation}
-            setShowCardView={setShowCardView}
-            setShowLanding={setShowLanding} />;
-    } else if (showCardView) {
-        return <CardView
-            setShowCardView={setShowCardView}
-            setShowDeckContents={setShowDeckContents}
-            setShowDeckCollection={setShowDeckCollection} />;
-    } else if (showDeckContents) {
-        return <DeckContents
-            setShowDeckContents={setShowDeckContents}
-            setShowCardView={setShowCardView} />;
+    const updateState = (newState) => {
+        setState((currState) => {
+            return {
+                ...currState,
+                ...newState
+            };
+        });
+    };
+
+    if (state.showLanding) {
+        return <Landing updateState={updateState} />;
+    } else if (state.showDeckCreation) {
+        return <DeckCreation updateState={updateState} />;
+    } else if (state.showDeckCollection) {
+        return <DeckCollection updateState={updateState} />;
+    } else if (state.showCardView) {
+        return <CardView updateState={updateState} />;
+    } else if (state.showDeckContents) {
+        return <DeckContents updateState={updateState} />;
     }
 };
 

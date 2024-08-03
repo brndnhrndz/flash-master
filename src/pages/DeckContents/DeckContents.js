@@ -1,9 +1,11 @@
 import React from 'react';
 
-const DeckContents = (props) => {
+const DeckContents = ({ updateState }) => {
     const handleExitDeckContents = () => {
-        props.setShowDeckContents(false);
-        props.setShowCardView(true);
+        updateState({
+            showDeckContents: false,
+            showCardView: true
+        });
     };
 
     return (

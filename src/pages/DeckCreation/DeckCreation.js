@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 
-const DeckCreation = (props) => {
+const DeckCreation = ({ updateState }) => {
     const [deckName, setDeckName] = useState('');
     const [frontText, setFrontText] = useState('');
     const [backText, setBackText] = useState('');
@@ -47,17 +47,19 @@ const DeckCreation = (props) => {
         const updatedCards = cards.filter((el, index) => {
             return index !== currentCardIndex;
         });
-        
+
         setCards(updatedCards);
-        
+
         if (currentCardIndex >= updatedCards.length) {
             setCurrentCardIndex(updatedCards.length - 1);
         }
     };
 
     const handleFinish = () => {
-        props.setShowDeckCreation(false);
-        props.setShowDeckCollection(true);
+        updateState({
+            showDeckCreation: false,
+            showDeckCollection: true
+        });
     };
 
     return (

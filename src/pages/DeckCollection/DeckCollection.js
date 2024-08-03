@@ -2,10 +2,12 @@ import React from 'react';
 
 import CollectionContainer from './CollectionContainer.js';
 
-const DeckCollection = (props) => {
+const DeckCollection = ({ updateState }) => {
     const handleLanding = () => {
-        props.setShowDeckCollection(false);
-        props.setShowLanding(true);
+        updateState({
+            showDeckCollection: false,
+            showLanding: true
+        });
     };
 
     return (
@@ -19,7 +21,7 @@ const DeckCollection = (props) => {
 
             <button type='button' onClick={handleLanding}>Landing</button>
 
-            <CollectionContainer />
+            <CollectionContainer updateState={updateState} />
         </div >
     );
 };

@@ -1,14 +1,18 @@
 import React from 'react';
 
-const Landing = (props) => {
+const Landing = ({ updateState }) => {
     const handleCreateDeck = () => {
-        props.setShowLanding(false);
-        props.setShowDeckCreation(true);
+        updateState({
+            showLanding: false,
+            showDeckCreation: true
+        });
     };
 
     const handleShowDecks = () => {
-        props.setShowLanding(false);
-        props.setShowDeckCollection(true);
+        updateState({
+            showLanding: false,
+            showDeckCollection: true
+        });
     };
 
     return (
