@@ -1,5 +1,4 @@
 import React from 'react';
-
 import CardFace from './CardFace.js';
 
 const CardView = ({ state, updateState }) => {
@@ -23,7 +22,7 @@ const CardView = ({ state, updateState }) => {
                 activeCardFace: state.activeCard.back,
                 activeFaceIsFront: false
             });
-        } else if (!state.activeFaceIsFront) {
+        } else {
             updateState({
                 activeCardFace: state.activeCard.front,
                 activeFaceIsFront: true
@@ -32,9 +31,8 @@ const CardView = ({ state, updateState }) => {
     };
 
     const handlePreviousClick = () => {
-        let activeIndex = state.activeCard.index;
-        let deckLength = state.activeDeck.cards.length;
-        let activeCards = state.activeDeck.cards;
+        const activeIndex = state.activeCard.index;
+        const activeCards = state.activeDeck.cards;
 
         if (activeIndex > 0) {
             updateState({
@@ -45,9 +43,9 @@ const CardView = ({ state, updateState }) => {
     };
 
     const handleNextClick = () => {
-        let activeIndex = state.activeCard.index;
-        let deckLength = state.activeDeck.cards.length;
-        let activeCards = state.activeDeck.cards;
+        const activeIndex = state.activeCard.index;
+        const deckLength = state.activeDeck.cards.length;
+        const activeCards = state.activeDeck.cards;
 
         if (activeIndex < deckLength - 1) {
             updateState({
@@ -63,7 +61,6 @@ const CardView = ({ state, updateState }) => {
 
             <button type='button'
                 onClick={handleDeckContentsClick}>Deck Contents</button>
-
             <button type='button'>Edit</button>
 
             <CardFace state={state} />
@@ -72,7 +69,6 @@ const CardView = ({ state, updateState }) => {
             <button type='button'
                 onClick={handlePreviousClick}>Previous</button>
             <button type='button' onClick={handleNextClick}>Next</button>
-
             <button type='button' onClick={handleReturnClick}>Return</button>
         </div >
     );

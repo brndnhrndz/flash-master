@@ -18,6 +18,7 @@ const Landing = ({ updateState }) => {
     return (
         <div id='landing'>
             <h1>Flash Master</h1>
+
             <button type='button' name='create-deck-btn'
                 onClick={handleCreateDeckClick}>
                 Create Deck

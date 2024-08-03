@@ -1,5 +1,4 @@
 import React from 'react';
-
 import CollectionContainer from './CollectionContainer.js';
 
 const DeckCollection = ({ decks, updateState }) => {
