@@ -3,8 +3,9 @@ import React from 'react';
 const DeckItem = ({ deck, updateState }) => {
     const handleDeckItemClick = () => {
         updateState({
+            activeDeck: deck,
             showDeckCollection: false,
-            showCardView: true
+            showCardView: true,
         });
     };
 
