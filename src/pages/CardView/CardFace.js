@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CardFace = ({ currCard }) => {
+const CardFace = ({ state }) => {
     return (
-        <div class='card-face'>
-            {currCard.front}
+        <div className='card-face'>
+            {state.activeCardFace}
         </div >
     );
 };
