@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 const CardView = (props) => {
     const handleDeckContents = () => {
         props.setShowCardView(false);
         props.setShowDeckContents(true);
-    }
+    };
 
     const handleReturn = () => {
         props.setShowCardView(false);
-        props.setShowDeckCollection(true)
-    }
+        props.setShowDeckCollection(true);
+    };
 
     return (
         <div id='card-view'>
@@ -29,6 +29,6 @@ const CardView = (props) => {
             <button type='button' onClick={handleReturn}>Return</button>
         </div >
     );
-}
+};
 
 export default CardView;

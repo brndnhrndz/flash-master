@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 const Landing = (props) => {
     const handleCreateDeck = () => {
         props.setShowLanding(false);
         props.setShowDeckCreation(true);
-    }
+    };
 
     const handleShowDecks = () => {
         props.setShowLanding(false);
         props.setShowDeckCollection(true);
-    }
+    };
 
     return (
         <div id='landing'>
@@ -24,6 +24,6 @@ const Landing = (props) => {
             </button>
         </div>
     );
-}
+};
 
 export default Landing;

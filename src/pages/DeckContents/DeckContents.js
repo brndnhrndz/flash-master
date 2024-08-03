@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 const DeckContents = (props) => {
     const handleExitDeckContents = () => {
         props.setShowDeckContents(false);
         props.setShowCardView(true);
-    }
+    };
 
     return (
         <div id='deck-contents'>
@@ -23,6 +23,6 @@ const DeckContents = (props) => {
             </div>
         </div>
     );
-}
+};
 
 export default DeckContents;

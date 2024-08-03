@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-import DeckItem from './DeckItem.js'
+import DeckItem from './DeckItem.js';
 
 const CollectionContainer = () => {
     const [decks, setDecks] = useState([

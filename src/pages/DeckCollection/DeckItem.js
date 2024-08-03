@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const DeckItem = ({ deck }) => {
     return (
@@ -6,6 +6,6 @@ const DeckItem = ({ deck }) => {
             {deck.deckName}
         </div>
     );
-}
+};
 
-export default DeckItem
+export default DeckItem;

@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-import Landing from './pages/Landing/Landing.js'
-import DeckCreation from './pages/DeckCreation/DeckCreation.js'
-import DeckCollection from './pages/DeckCollection/DeckCollection.js'
-import CardView from './pages/CardView/CardView.js'
-import DeckContents from './pages/DeckContents/DeckContents.js'
+import Landing from './pages/Landing/Landing.js';
+import DeckCreation from './pages/DeckCreation/DeckCreation.js';
+import DeckCollection from './pages/DeckCollection/DeckCollection.js';
+import CardView from './pages/CardView/CardView.js';
+import DeckContents from './pages/DeckContents/DeckContents.js';
 
 const App = () => {
     const [showLanding, setShowLanding] = useState(true);
@@ -32,12 +32,12 @@ const App = () => {
         return <CardView
             setShowCardView={setShowCardView}
             setShowDeckContents={setShowDeckContents}
-            setShowDeckCollection={setShowDeckCollection} />
+            setShowDeckCollection={setShowDeckCollection} />;
     } else if (showDeckContents) {
         return <DeckContents
             setShowDeckContents={setShowDeckContents}
-            setShowCardView={setShowCardView} />
+            setShowCardView={setShowCardView} />;
     }
-}
+};
 
 export default App;

@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { React, useState } from 'react';
 
 const DeckCreation = (props) => {
     const [deckName, setDeckName] = useState('');
@@ -9,27 +9,27 @@ const DeckCreation = (props) => {
 
     const handleDeckNameChange = (e) => {
         setDeckName(e.target.value);
-    }
+    };
 
     const handleFrontTextChange = (e) => {
         setFrontText(e.target.value);
-    }
+    };
 
     const handleBackTextChange = (e) => {
         setBackText(e.target.value);
-    }
+    };
 
     const handlePrevCard = () => {
         if (currentCardIndex > 0) {
             setCurrentCardIndex(currentCardIndex - 1);
         }
-    }
+    };
 
     const handleNextCard = () => {
         if (currentCardIndex < cards.length - 1) {
             setCurrentCardIndex(currentCardIndex + 1);
         }
-    }
+    };
 
     const handleSaveCard = () => {
         const newCard = {
@@ -41,7 +41,7 @@ const DeckCreation = (props) => {
 
         setFrontText('');
         setBackText('');
-    }
+    };
 
     const handleRemoveCard = () => {
         const updatedCards = cards.filter((el, index) => {
@@ -53,12 +53,12 @@ const DeckCreation = (props) => {
         if (currentCardIndex >= updatedCards.length) {
             setCurrentCardIndex(updatedCards.length - 1);
         }
-    }
+    };
 
     const handleFinish = () => {
         props.setShowDeckCreation(false);
         props.setShowDeckCollection(true);
-    }
+    };
 
     return (
         <div id='deck-creation-form'>
@@ -96,7 +96,7 @@ const DeckCreation = (props) => {
             </form>
         </div>
     );
-}
+};
 
 
 export default DeckCreation;

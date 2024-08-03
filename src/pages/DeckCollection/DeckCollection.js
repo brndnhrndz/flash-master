@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-import CollectionContainer from './CollectionContainer.js'
+import CollectionContainer from './CollectionContainer.js';
 
 const DeckCollection = (props) => {
     const handleLanding = () => {
         props.setShowDeckCollection(false);
         props.setShowLanding(true);
-    }
+    };
 
     return (
         <div id='deck-collection'>
@@ -22,6 +22,6 @@ const DeckCollection = (props) => {
             <CollectionContainer />
         </div >
     );
-}
+};
 
 export default DeckCollection;
