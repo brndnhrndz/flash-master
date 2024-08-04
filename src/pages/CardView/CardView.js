@@ -58,19 +58,35 @@ const CardView = ({ state, updateState }) => {
 
     return (
         <div id='card-view'>
-            <h1>Card View</h1>
+            <div id='card-view-header-container'>
+                <h1 class='title'>{state.activeDeck.deckName}</h1>
+                <div id='card-view-header-nav-container'>
+                    <button type='button'
+                        className='card-view-header-nav-btn'
+                        onClick={handleDeckContentsClick}>
+                        Contents
+                    </button>
+                    <button type='button'
+                        className='card-view-header-nav-btn'>Edit</button>
+                </div>
+            </div>
 
-            <button type='button'
-                onClick={handleDeckContentsClick}>Deck Contents</button>
-            <button type='button'>Edit</button>
+            <div id='card-view-face-container'>
+                <CardFace state={state} />
+            </div>
 
-            <CardFace state={state} />
+            <div id='card-view-face-nav-container'>
 
-            <button type='button' onClick={handleFlipClick}>Flip</button>
-            <button type='button'
-                onClick={handlePreviousClick}>Previous</button>
-            <button type='button' onClick={handleNextClick}>Next</button>
-            <button type='button' onClick={handleReturnClick}>Return</button>
+                <button type='button' className='card-view-face-nav-btn'
+                    onClick={handleReturnClick}>Return</button>
+                <button type='button' className='card-view-face-nav-btn'
+                    onClick={handlePreviousClick}>Previous</button>
+                <button type='button' className='card-view-face-nav-btn'
+                    onClick={handleNextClick}>Next</button>
+                <button type='button' className='card-view-face-nav-btn'
+                    onClick={handleFlipClick}>Flip</button>
+
+            </div>
         </div >
     );
 };

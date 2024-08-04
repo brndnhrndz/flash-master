@@ -1,0 +1,16 @@
+.card-face {
+    align-items: center;
+    background-color: #F5F5F5;
+    border: 2px solid #dddddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333333;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    height: 50vh;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    width: 35vh;
+}
