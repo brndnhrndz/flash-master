@@ -4,12 +4,16 @@ import '../../assets/CollectionContainer.css'
 
 const CollectionContainer = ({ decks, updateState }) => {
     return (
-        <div id='collection-contaniner'>
-            {
-                decks.map((deck, index) => (
-                    <DeckItem deck={deck} updateState={updateState} />
-                ))
-            }
+        <div className='grid-container'>
+            <div id='collection-contaniner'>
+                {
+                    decks.map((deck, index) => (
+                        <DeckItem
+                            deck={deck}
+                            updateState={updateState} />
+                    ))
+                }
+            </div>
         </div>
     );
 };

@@ -11,18 +11,30 @@ const DeckCollection = ({ decks, updateState }) => {
     };
 
     return (
-        <div id='deck-collection'>
-            <h1>Deck Collection</h1>
+        <div className='alt-container'>
+            <div id='deck-collection'>
+                <h1 className='title'>Deck Collection</h1>
 
-            <button type='button'>Manage Decks</button>
-            <button type='button'>Create</button>
-            <button type='button'>Sort</button>
-            <button type='button'>Delete</button>
-
-            <button type='button' onClick={handleLandingClick}>Landing</button>
-
-            <CollectionContainer decks={decks} updateState={updateState} />
-        </div >
+                <div className='collection-controls'>
+                    <button
+                        type='button'
+                        className='btn'
+                        onClick={handleLandingClick}>
+                        Landing
+                    </button>
+                    <button
+                        type='button'
+                        className='btn'>
+                        Manage
+                    </button>
+                </div>
+                
+                {/* apply grid styles to <CollectionContainer /> */}
+                <CollectionContainer
+                    decks={decks}
+                    updateState={updateState} />
+            </div >
+        </div>
     );
 };
 

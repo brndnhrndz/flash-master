@@ -13,7 +13,9 @@ const DeckItem = ({ deck, updateState }) => {
     };
 
     return (
-        <div className='deck-item' onClick={handleDeckItemClick}>
+        <div
+            className='deck-item'
+            onClick={handleDeckItemClick}>
             {deck.deckName}
         </div>
     );
