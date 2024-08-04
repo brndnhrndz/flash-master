@@ -1,0 +1,53 @@
+[
+    {
+        "deckId": "1",
+        "deckName": "verbs",
+        "description": "",
+        "createdDate": "",
+        "modifiedDate": "",
+        "tags": [],
+        "author": "",
+        "isFavorite": false,
+        "cardCount": 0,
+        "cards": [
+            {
+                "index": 0,
+                "front": "llegar",
+                "back": "to arrive, to come"
+            },
+            {
+                "index": 1,
+                "front": "subir",
+                "back": "to go up"
+            },
+            {
+                "index": 2,
+                "front": "poner",
+                "back": "to put"
+            }
+        ]
+    },
+    {
+        "deckId": "2",
+        "deckName": "nouns",
+        "description": "",
+        "createdDate": "",
+        "modifiedDate": "",
+        "tags": [],
+        "author": "",
+        "isFavorite": false,
+        "cardCount": 0,
+        "cards": [
+            {
+                "index": 0,
+                "front": "el espejo",
+                "back": "the mirror"
+            },
+            {
+                "index": 1,
+                "front": "el hombre",
+                "back": "the man"
+            }
+        ]
+    }
+]
