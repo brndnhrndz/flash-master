@@ -20,7 +20,7 @@ const App = () => {
     });
 
     useEffect(() => {
-        fetch('../src/data/decks.json')
+        fetch('/decks.json')
             .then(response => response.json())
             .then(data => {
                 setState(currState => ({
