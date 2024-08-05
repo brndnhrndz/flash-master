@@ -29,7 +29,6 @@ const DeckCollection = ({ decks, updateState }) => {
                     </button>
                 </div>
                 
-                {/* apply grid styles to <CollectionContainer /> */}
                 <CollectionContainer
                     decks={decks}
                     updateState={updateState} />
