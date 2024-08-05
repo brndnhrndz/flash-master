@@ -2,57 +2,84 @@ import React, { useState } from 'react';
 import '../../assets/DeckCreation.css'
 
 const DeckCreation = ({ updateState }) => {
-    const [deckName, setDeckName] = useState('');
-    const [frontText, setFrontText] = useState('');
-    const [backText, setBackText] = useState('');
-    const [cards, setCards] = useState([]);
-    const [currentCardIndex, setCurrentCardIndex] = useState(0);
+    const [creationState, setCreationState] = useState({
+        deckName: '',
+        frontText: '',
+        backText: '',
+        cards: [],
+        currentCardIndex: 0
+    });
+
+    const updateCreationState = (newState) => {
+        setCreationState((currState) => {
+            return {
+                ...currState,
+                ...newState
+            };
+        });
+    };
 
     const handleDeckNameChange = (e) => {
-        setDeckName(e.target.value);
+        updateCreationState({
+            deckName: e.target.value
+        });
     };
 
     const handleFrontTextChange = (e) => {
-        setFrontText(e.target.value);
+        updateCreationState({
+            frontText: e.target.value
+        });
     };
 
     const handleBackTextChange = (e) => {
-        setBackText(e.target.value);
+        updateCreationState({
+            backText: e.target.value
+        });
     };
 
     const handlePrevCardClick = () => {
-        if (currentCardIndex > 0) {
-            setCurrentCardIndex(currentCardIndex - 1);
+        if (creationState.currentCardIndex > 0) {
+            updateCreationState({
+                currentCardIndex: creationState.currentCardIndex - 1
+            });
         }
     };
 
     const handleNextCardClick = () => {
-        if (currentCardIndex < cards.length - 1) {
-            setCurrentCardIndex(currentCardIndex + 1);
+        if (creationState.currentCardIndex < creationState.cards.length - 1) {
+            updateCreationState({
+                currentCardIndex: creationState.currentCardIndex + 1
+            });
         }
     };
 
     const handleSaveCardClick = () => {
         const newCard = {
-            front: frontText,
-            back: backText
+            index: creationState.currentCardIndex,
+            front: creationState.frontText,
+            back: creationState.backText
         };
 
-        setCards([...cards, newCard]);
-
-        setFrontText('');
-        setBackText('');
+        updateCreationState({
+            frontText: '',
+            backText: '',
+            cards: [...creationState.cards, newCard]
+        });
     };
 
     const handleRemoveCardClick = () => {
-        const updatedCards = cards.filter((el, index) => {
-            return index !== currentCardIndex;
+        const updatedCards = creationState.cards.filter((el, index) => {
+            return index !== creationState.currentCardIndex;
         });
 
-        setCards(updatedCards);
+        updateCreationState({
+            cards: updatedCards
+        });
 
-        if (currentCardIndex >= updatedCards.length) {
-            setCurrentCardIndex(updatedCards.length - 1);
+        if (creationState.currentCardIndex >= updatedCards.length) {
+            updateCreationState({
+                currentCardIndex: updatedCards.length - 1
+            });
         }
     };
 
@@ -64,39 +91,75 @@ const DeckCreation = ({ updateState }) => {
     };
 
     return (
-        <div id='deck-creation-form'>
-            <h1>Create a Deck</h1>
+        <div className='alt-container'>
+            <div id='deck-creation-form'>
+                <h1 className='title'>Create a Deck</h1>
 
-            <form>
-                <label htmlFor='deck-name-input'>Deck Name:</label>
-                <input type='text' id='deck-name-input' name='deck-name'
-                    placeholder='Enter a deck name:' autoComplete='off'
-                    value={deckName} onChange={handleDeckNameChange} />
+                <form>
+                    <div>
+                        <label htmlFor='deck-name-input'>Deck Name:</label>
+                        <input
+                            type='text'
+                            id='deck-name-input'
+                            name='deck-name'
+                            placeholder='Enter a deck name:'
+                            autoComplete='off'
+                            value={creationState.deckName}
+                            onChange={handleDeckNameChange} />
+                    </div>
 
-                <div id='edit-card-faces'>
-                    <div id='front-face'></div>
-                    <div id='back-face'></div>
-                </div>
+                    <div>
+                        <div>
+                            <label htmlFor='front-text-input'>Front:</label>
+                            <input
+                                type='text'
+                                id='front-text-input'
+                                name='front-text'
+                                autoComplete='off'
+                                value={creationState.frontText}
+                                onChange={handleFrontTextChange} />
+                        </div>
 
-                <label htmlFor='front-text-input'>Front:</label>
-                <input type='text' id='front-text-input' name='front-text'
-                    autoComplete='off' value={frontText}
-                    onChange={handleFrontTextChange} />
+                        <div>
+                            <label htmlFor='back-text-input'>Back:</label>
+                            <input
+                                type='text'
+                                id='back-text-input'
+                                name='back-text'
+                                autoComplete='off'
+                                value={creationState.backText}
+                                onChange={handleBackTextChange} />
+                        </div>
+                    </div>
 
-                <label htmlFor='back-text-input'>Back:</label>
-                <input type='text' id='back-text-input' name='back-text'
-                    autoComplete='off' value={backText}
-                    onChange={handleBackTextChange} />
+                    <button
+                        type='button'
+                        onClick={handlePrevCardClick}>
+                        Previous
+                    </button>
+                    <button
+                        type='button'
+                        onClick={handleNextCardClick}>
+                        Next
+                    </button>
+                    <button
+                        type='button'
+                        onClick={handleSaveCardClick}>
+                        Save Card
+                    </button>
+                    <button
+                        type='button'
+                        onClick={handleRemoveCardClick}>
+                        Remove Card
+                    </button>
+                    <button
+                        type='button'
+                        onClick={handleFinishClick}>
+                        Finish
 
-                <button type='button'
-                    onClick={handlePrevCardClick}>Previous</button>
-                <button type='button' onClick={handleNextCardClick}>Next</button>
-                <button type='button'
-                    onClick={handleSaveCardClick}>Save Card</button>
-                <button type='button'
-                    onClick={handleRemoveCardClick}>Remove Card</button>
-                <button type='button' onClick={handleFinishClick}>Finish</button>
-            </form>
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };
