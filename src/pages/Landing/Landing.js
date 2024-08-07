@@ -21,7 +21,7 @@ const Landing = ({ updateState }) => {
             <div id='landing'>
                 <h1 className='title'>Flash Master</h1>
 
-                <div id='landing-controls-container'>
+                <div id='landing-controls'>
                     <button
                         type='button'
                         name='create-deck-btn'
