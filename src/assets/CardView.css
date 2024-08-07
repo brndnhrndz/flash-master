@@ -1,61 +1,23 @@
 #card-view {
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
 }
 
-#card-view-header-container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.title {
-    color: #333333;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 35px;
-    text-transform: capitalize;
-}
-
-#card-view-header-nav-container {
+#card-view-controls {
     display: flex;
     justify-content: space-between;
     margin: 10px 0 20px 0;
     width: 35vh;
 }
 
-.card-view-header-nav-btn,
-.card-view-face-nav-btn {
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px 0;
-    box-sizing: border-box;
-    color: #0f1111;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Amazon Ember", sans-serif;
-    font-size: 13px;
-    line-height: 29px;
-    padding: 0 10px 0 11px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    touch-action: manipulation;
-    user-select: none;
-    vertical-align: middle;
-    width: 100px;
-    -webkit-user-select: none;
-}
-
-#card-view-face-container {
+#card-view-face {
     align-items: center;
     display: flex;
     justify-content: center;
 }
 
-#card-view-face-nav-container {
+#card-view-face-controls {
     align-items: center;
     display: flex;
     justify-content: space-between;
