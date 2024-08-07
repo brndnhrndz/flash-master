@@ -1,19 +1,15 @@
 .alt-container {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
 }
 
 #deck-collection {
-    margin: 25px 25px 0 25px;
+    margin: 25px;
 }
 
-.collection-controls {
+#collection-controls {
     display: flex;
     justify-content: space-between;
     margin: 10px 0 25px 0;
-}
-
-#collection-footer {
-    height: 25px;
 }

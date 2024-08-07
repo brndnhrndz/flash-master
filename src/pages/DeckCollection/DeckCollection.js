@@ -15,7 +15,7 @@ const DeckCollection = ({ decks, updateState }) => {
             <div id='deck-collection'>
                 <h1 className='title'>Deck Collection</h1>
 
-                <div className='collection-controls'>
+                <div id='collection-controls'>
                     <button
                         type='button'
                         className='btn'
@@ -32,9 +32,6 @@ const DeckCollection = ({ decks, updateState }) => {
                 <CollectionContainer
                     decks={decks}
                     updateState={updateState} />
-                
-                <div id='collection-footer'>
-                </div>
             </div >
         </div>
     );
