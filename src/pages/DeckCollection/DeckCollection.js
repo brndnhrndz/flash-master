@@ -32,6 +32,9 @@ const DeckCollection = ({ decks, updateState }) => {
                 <CollectionContainer
                     decks={decks}
                     updateState={updateState} />
+                
+                <div id='collection-footer'>
+                </div>
             </div >
         </div>
     );
