@@ -12,7 +12,7 @@ const DeckCollection = ({ decks, updateState }) => {
     return (
         <div className='alt-container'>
             <div className='collection-container'>
-                <h1 className='title'>Deck Collection</h1>
+                <h1 className='title'>My Decks</h1>
 
                 <div className='collection-controls'>
                     <button
