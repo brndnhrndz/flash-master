@@ -32,7 +32,7 @@ const DeckCollection = ({ decks, updateState }) => {
                 <CollectionContainer
                     decks={decks}
                     updateState={updateState} />
-            </div >
+            </div>
         </div>
     );
 };
