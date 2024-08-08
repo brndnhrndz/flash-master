@@ -3,8 +3,10 @@ import '../../assets/CardFace.css'
 
 const CardFace = ({ state }) => {
     return (
-        <div className='card-face'>
-            {state.activeCardFace}
+        <div id='card-face'>
+            <p id='card-face-text'>
+                {state.activeCardFace}
+            </p>
         </div >
     );
 };
