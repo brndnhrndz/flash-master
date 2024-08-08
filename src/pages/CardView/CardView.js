@@ -45,10 +45,9 @@ const CardView = ({ state, updateState }) => {
 
     const handleNextClick = () => {
         const activeIndex = state.activeCard.index;
-        const deckLength = state.activeDeck.cards.length;
         const activeCards = state.activeDeck.cards;
 
-        if (activeIndex < deckLength - 1) {
+        if (activeIndex < activeCards.length - 1) {
             updateState({
                 activeCard: activeCards[activeIndex + 1],
                 activeCardFace: activeCards[activeIndex + 1].front
