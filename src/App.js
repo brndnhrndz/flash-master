@@ -53,7 +53,9 @@ const App = () => {
             state={state}
             updateState={updateState} />;
     } else if (state.showDeckContents) {
-        return <DeckContents updateState={updateState} />;
+        return <DeckContents
+            deck={state.activeDeck}
+            updateState={updateState} />;
     }
 };
 

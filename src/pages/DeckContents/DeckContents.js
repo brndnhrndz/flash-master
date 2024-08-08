@@ -1,7 +1,8 @@
 import React from 'react';
+import ContentsContainer from './ContentsContainer.js';
 import '../../assets/DeckContents.css'
 
-const DeckContents = ({ updateState }) => {
+const DeckContents = ({ deck, updateState }) => {
     const handleExitDeckContentsClick = () => {
         updateState({
             showDeckContents: false,
@@ -10,19 +11,27 @@ const DeckContents = ({ updateState }) => {
     };
 
     return (
-        <div id='deck-contents'>
-            <h1>Deck Contents</h1>
+        <div className='alt-container'>
+            <div id='deck-contents'>
+                <h1 className='title'>Deck Contents</h1>
 
-            <button type='button'
-                onClick={handleExitDeckContentsClick}>Exit Deck Contents</button>
+                <div id='deck-contents-controls'>
+                    <button
+                        type='button'
+                        className='btn'
+                        onClick={handleExitDeckContentsClick}>
+                        Exit
+                    </button>
+                    <button
+                        type='button'
+                        className='btn'>
+                        Manage
+                    </button>
+                </div>
 
-            <button type='button'>Manage Cards</button>
-            <button type='button'>Add Card</button>
-            <button type='button'>Sort</button>
-            <button type='button'>Delete</button>
-
-            <div id='deck-contents-icons'>
-                <div id='card-icon'></div>
+                <ContentsContainer
+                    deck={deck}
+                    updateState={updateState} />
             </div>
         </div>
     );
