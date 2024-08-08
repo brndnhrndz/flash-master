@@ -1,6 +1,5 @@
 import React from 'react';
 import CardItem from './CardItem.js';
-import '../../assets/ContentsContainer.css'
 
 const ContentsContainer = ({ deck, updateState }) => {
     return (

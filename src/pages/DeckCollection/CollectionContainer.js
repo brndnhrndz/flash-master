@@ -1,6 +1,5 @@
 import React from 'react';
 import DeckItem from './DeckItem.js';
-import '../../assets/CollectionContainer.css'
 
 const CollectionContainer = ({ decks, updateState }) => {
     return (

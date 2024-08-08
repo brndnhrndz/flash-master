@@ -1,6 +1,5 @@
 import React from 'react';
 import ContentsContainer from './ContentsContainer.js';
-import '../../assets/DeckContents.css'
 
 const DeckContents = ({ deck, updateState }) => {
     const handleExitDeckContentsClick = () => {

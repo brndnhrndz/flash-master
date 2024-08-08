@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../assets/CardItem.css'
 
 const CardItem = ({ card, updateState }) => {
     const handleCardItemClick = () => {

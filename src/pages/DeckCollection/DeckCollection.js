@@ -1,6 +1,5 @@
 import React from 'react';
 import CollectionContainer from './CollectionContainer.js';
-import '../../assets/DeckCollection.css'
 
 const DeckCollection = ({ decks, updateState }) => {
     const handleLandingClick = () => {
