@@ -12,10 +12,10 @@ const DeckContents = ({ deck, updateState }) => {
 
     return (
         <div className='alt-container'>
-            <div id='deck-contents'>
+            <div className='collection-container'>
                 <h1 className='title'>Deck Contents</h1>
 
-                <div id='deck-contents-controls'>
+                <div className='collection-controls'>
                     <button
                         type='button'
                         className='btn'

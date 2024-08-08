@@ -12,10 +12,10 @@ const DeckCollection = ({ decks, updateState }) => {
 
     return (
         <div className='alt-container'>
-            <div id='deck-collection'>
+            <div className='collection-container'>
                 <h1 className='title'>Deck Collection</h1>
 
-                <div id='collection-controls'>
+                <div className='collection-controls'>
                     <button
                         type='button'
                         className='btn'

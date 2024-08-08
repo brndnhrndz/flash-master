@@ -4,7 +4,7 @@ import '../../assets/CollectionContainer.css'
 
 const CollectionContainer = ({ decks, updateState }) => {
     return (
-        <div id='collection-contaniner'>
+        <div className='collection-grid'>
             {
                 decks.map((deck, index) => (
                     <DeckItem
@@ -13,7 +13,6 @@ const CollectionContainer = ({ decks, updateState }) => {
                 ))
             }
         </div>
-
     );
 };
 

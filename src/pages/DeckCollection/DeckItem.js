@@ -14,7 +14,7 @@ const DeckItem = ({ deck, updateState }) => {
 
     return (
         <div
-            className='deck-item'
+            className='collection-item'
             onClick={handleDeckItemClick}>
             {deck.deckName}
         </div>

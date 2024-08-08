@@ -4,7 +4,7 @@ import '../../assets/ContentsContainer.css'
 
 const ContentsContainer = ({ deck, updateState }) => {
     return (
-        <div id='contents-container'>
+        <div className='collection-grid'>
             {
                 deck.cards.map((card, index) => (
                     <CardItem
