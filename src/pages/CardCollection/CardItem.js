@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CardItem = ({ card, updateState }) => {
-    const handleCardItemClick = () => {
+    const handleCardClick = () => {
         updateState({
             activeCard: card,
             activeCardFace: card.front,
@@ -13,7 +13,7 @@ const CardItem = ({ card, updateState }) => {
     return (
         <div
             className='collection-item'
-            onClick={handleCardItemClick}>
+            onClick={handleCardClick}>
             {card.front}
         </div>
     );

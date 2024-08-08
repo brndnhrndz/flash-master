@@ -3,7 +3,7 @@ import Landing from './pages/Landing/Landing.js';
 import DeckCreation from './pages/DeckCreation/DeckCreation.js';
 import DeckCollection from './pages/DeckCollection/DeckCollection.js';
 import CardView from './pages/CardView/CardView.js';
-import DeckContents from './pages/DeckContents/DeckContents.js';
+import CardCollection from './pages/CardCollection/CardCollection.js';
 
 const App = () => {
     const [state, setState] = useState({
@@ -11,7 +11,7 @@ const App = () => {
         showDeckCreation: false,
         showDeckCollection: false,
         showCardView: false,
-        showDeckContents: false,
+        showCardCollection: false,
         activeDeck: {},
         activeCard: {},
         activeCardFace: '',
@@ -52,8 +52,8 @@ const App = () => {
         return <CardView
             state={state}
             updateState={updateState} />;
-    } else if (state.showDeckContents) {
-        return <DeckContents
+    } else if (state.showCardCollection) {
+        return <CardCollection
             deck={state.activeDeck}
             updateState={updateState} />;
     }
