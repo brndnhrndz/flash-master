@@ -18,6 +18,7 @@ const CardView = ({ state, updateState }) => {
     };
 
     const handleFlipClick = () => {
+        console.log(state.activeFaceIsFront);
         if (state.activeFaceIsFront) {
             updateState({
                 activeCardFace: state.activeCard.back,
@@ -38,7 +39,8 @@ const CardView = ({ state, updateState }) => {
         if (activeIndex > 0) {
             updateState({
                 activeCard: activeCards[activeIndex - 1],
-                activeCardFace: activeCards[activeIndex - 1].front
+                activeCardFace: activeCards[activeIndex - 1].front,
+                activeFaceIsFront: true
             });
         }
     };
@@ -50,7 +52,8 @@ const CardView = ({ state, updateState }) => {
         if (activeIndex < activeCards.length - 1) {
             updateState({
                 activeCard: activeCards[activeIndex + 1],
-                activeCardFace: activeCards[activeIndex + 1].front
+                activeCardFace: activeCards[activeIndex + 1].front,
+                activeFaceIsFront: true
             });
         }
     };
