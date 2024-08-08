@@ -75,11 +75,9 @@ const CardView = ({ state, updateState }) => {
                     </button>
                 </div>
                 
-                <div id='card-view-face'>
-                    <CardFace state={state} />
-                </div>
+                <CardFace state={state} />
 
-                <div id='card-view-face-controls'>
+                <div id='card-face-controls'>
                     <button
                         type='button'
                         className='btn'

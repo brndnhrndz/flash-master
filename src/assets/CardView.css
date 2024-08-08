@@ -11,13 +11,7 @@
     width: 35vh;
 }
 
-#card-view-face {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-#card-view-face-controls {
+#card-face-controls {
     align-items: center;
     display: flex;
     justify-content: space-between;
