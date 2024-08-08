@@ -3,10 +3,10 @@ import CardFace from './CardFace.js';
 import '../../assets/CardView.css'
 
 const CardView = ({ state, updateState }) => {
-    const handleDeckContentsClick = () => {
+    const handleCardCollectionClick = () => {
         updateState({
             showCardView: false,
-            showDeckContents: true
+            showCardCollection: true
         });
     };
 
@@ -64,8 +64,8 @@ const CardView = ({ state, updateState }) => {
                     <button
                         type='button'
                         className='btn'
-                        onClick={handleDeckContentsClick}>
-                        Contents
+                        onClick={handleCardCollectionClick}>
+                        Cards
                     </button>
                     <button
                         type='button'

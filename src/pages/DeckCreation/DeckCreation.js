@@ -36,7 +36,7 @@ const DeckCreation = ({ updateState }) => {
         });
     };
 
-    const handlePrevCardClick = () => {
+    const handlePreviousClick = () => {
         if (creationState.currentCardIndex > 0) {
             updateCreationState({
                 currentCardIndex: creationState.currentCardIndex - 1
@@ -44,7 +44,7 @@ const DeckCreation = ({ updateState }) => {
         }
     };
 
-    const handleNextCardClick = () => {
+    const handleNextClick = () => {
         if (creationState.currentCardIndex < creationState.cards.length - 1) {
             updateCreationState({
                 currentCardIndex: creationState.currentCardIndex + 1
@@ -52,7 +52,7 @@ const DeckCreation = ({ updateState }) => {
         }
     };
 
-    const handleSaveCardClick = () => {
+    const handleSaveClick = () => {
         const newCard = {
             index: creationState.currentCardIndex,
             front: creationState.frontText,
@@ -66,7 +66,7 @@ const DeckCreation = ({ updateState }) => {
         });
     };
 
-    const handleRemoveCardClick = () => {
+    const handleRemoveClick = () => {
         const updatedCards = creationState.cards.filter((el, index) => {
             return index !== creationState.currentCardIndex;
         });
@@ -133,22 +133,22 @@ const DeckCreation = ({ updateState }) => {
 
                     <button
                         type='button'
-                        onClick={handlePrevCardClick}>
+                        onClick={handlePreviousClick}>
                         Previous
                     </button>
                     <button
                         type='button'
-                        onClick={handleNextCardClick}>
+                        onClick={handleNextClick}>
                         Next
                     </button>
                     <button
                         type='button'
-                        onClick={handleSaveCardClick}>
+                        onClick={handleSaveClick}>
                         Save Card
                     </button>
                     <button
                         type='button'
-                        onClick={handleRemoveCardClick}>
+                        onClick={handleRemoveClick}>
                         Remove Card
                     </button>
                     <button

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DeckItem = ({ deck, updateState }) => {
-    const handleDeckItemClick = () => {
+    const handleDeckClick = () => {
         updateState({
             activeDeck: deck,
             activeCard: deck.cards[0],
@@ -14,7 +14,7 @@ const DeckItem = ({ deck, updateState }) => {
     return (
         <div
             className='collection-item'
-            onClick={handleDeckItemClick}>
+            onClick={handleDeckClick}>
             {deck.deckName}
         </div>
     );
