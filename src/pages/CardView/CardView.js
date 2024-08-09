@@ -67,13 +67,14 @@ const CardView = ({ state, updateState }) => {
                     <button
                         type='button'
                         className='btn'
-                        onClick={handleCardCollectionClick}>
-                        Cards
+                        onClick={handleReturnClick}>
+                        Return
                     </button>
                     <button
                         type='button'
-                        className='btn'>
-                        Edit
+                        className='btn'
+                        onClick={handleCardCollectionClick}>
+                        Cards
                     </button>
                 </div>
 
@@ -82,12 +83,6 @@ const CardView = ({ state, updateState }) => {
                     state={state} />
 
                 <div id='card-face-controls'>
-                    <button
-                        type='button'
-                        className='btn'
-                        onClick={handleReturnClick}>
-                        Return
-                    </button>
                     <button
                         type='button'
                         className='btn'
