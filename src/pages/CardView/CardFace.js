@@ -1,9 +1,11 @@
 import React from 'react';
 import '../../assets/CardFace.css'
 
-const CardFace = ({ state }) => {
+const CardFace = ({ handleFlipClick, state }) => {
     return (
-        <div id='card-face'>
+        <div
+            onClick={handleFlipClick}
+            id='card-face'>
             <p id='card-face-text'>
                 {state.activeCardFace}
             </p>

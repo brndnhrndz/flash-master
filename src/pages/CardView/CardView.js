@@ -76,8 +76,10 @@ const CardView = ({ state, updateState }) => {
                         Edit
                     </button>
                 </div>
-                
-                <CardFace state={state} />
+
+                <CardFace
+                    handleFlipClick={handleFlipClick}
+                    state={state} />
 
                 <div id='card-face-controls'>
                     <button
@@ -97,12 +99,6 @@ const CardView = ({ state, updateState }) => {
                         className='btn'
                         onClick={handleNextClick}>
                         Next
-                    </button>
-                    <button
-                        type='button'
-                        className='btn'
-                        onClick={handleFlipClick}>
-                        Flip
                     </button>
                 </div>
             </div >
