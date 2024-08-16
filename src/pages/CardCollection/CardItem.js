@@ -6,7 +6,8 @@ const CardItem = ({ card, updateState }) => {
             activeCard: card,
             activeCardFace: card.front,
             showCardContents: false,
-            showCardView: true
+            showCardView: true,
+            activeComponent: 3
         });
     };
 

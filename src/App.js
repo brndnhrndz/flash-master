@@ -60,7 +60,7 @@ const App = () => {
             updateState={updateState} />;
     } else if (state.showCardCollection) {
         return <CardCollection
-            deck={state.activeDeck}
+            state={state}
             updateState={updateState} />;
     }
 };

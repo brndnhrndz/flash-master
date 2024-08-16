@@ -58,11 +58,23 @@ const Header = ({ state, updateState }) => {
                     activeComponent: 2
                 });
             }
-            case 3: {
+            case 4: {
                 updateState({
                     showCardCollection: false,
                     showDeckCollection: true,
                     activeComponent: 2
+                });
+            }
+        }
+    };
+
+    const handleCardsClick = () => {
+        switch (state.activeComponent) {
+            case 3: {
+                updateState({
+                    showCardView: false,
+                    showCardCollection: true,
+                    activeComponent: 4
                 });
             }
         }
@@ -79,7 +91,9 @@ const Header = ({ state, updateState }) => {
                 <div id='nav'>
                     <ul>
                         <li onClick={handleDecksClick}>Decks</li>
-                        <li className='ml-header-nav-li'>Cards</li>
+                        <li
+                            onClick={handleCardsClick}
+                            className='ml-header-nav-li'>Cards</li>
                     </ul>
                 </div>
             </div>

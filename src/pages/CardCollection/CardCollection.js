@@ -1,7 +1,8 @@
 import React from 'react';
-import ContentsContainer from './ContentsContainer.js';
+import Header from '../../components/Header.js';
+import CardItem from './CardItem.js';
 
-const CardCollection = ({ deck, updateState }) => {
+const CardCollection = ({ state, updateState }) => {
     const handleExitClick = () => {
         updateState({
             showCardCollection: false,
@@ -10,29 +11,23 @@ const CardCollection = ({ deck, updateState }) => {
     };
 
     return (
-        <div className='alt-container'>
+        <>
+            <Header
+                state={state}
+                updateState={updateState} />
+
             <div className='collection-container'>
-                <h1 className='title'>{deck.deckName}</h1>
-
-                <div className='collection-controls'>
-                    <button
-                        type='button'
-                        className='btn'
-                        onClick={handleExitClick}>
-                        Exit
-                    </button>
-                    <button
-                        type='button'
-                        className='btn'>
-                        Manage
-                    </button>
+                <div className='collection-grid'>
+                    {
+                        state.activeDeck.cards.map((card, index) => (
+                            <CardItem
+                                card={card}
+                                updateState={updateState} />
+                        ))
+                    }
                 </div>
-
-                <ContentsContainer
-                    deck={deck}
-                    updateState={updateState} />
             </div>
-        </div>
+        </>
     );
 };
 
