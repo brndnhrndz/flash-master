@@ -7,11 +7,12 @@ import CardCollection from './pages/CardCollection/CardCollection.js';
 
 const App = () => {
     const [state, setState] = useState({
-        showLanding: true,
-        showDeckCreation: false,
-        showDeckCollection: false,
-        showCardView: false,
-        showCardCollection: false,
+        showLanding: true,              // activeComponent: 0
+        showDeckCreation: false,        // activeComponent: 1
+        showDeckCollection: false,      // activeComponent: 2
+        showCardView: false,            // activeComponent: 3
+        showCardCollection: false,      // activeComponent: 4
+        activeComponent: 0,
         activeDeck: {},
         activeCard: {},
         activeCardFace: '',
@@ -41,11 +42,16 @@ const App = () => {
     };
 
     if (state.showLanding) {
-        return <Landing updateState={updateState} />;
+        return <Landing
+            state={state}
+            updateState={updateState} />;
     } else if (state.showDeckCreation) {
-        return <DeckCreation updateState={updateState} />;
+        return <DeckCreation
+            state={state}
+            updateState={updateState} />;
     } else if (state.showDeckCollection) {
         return <DeckCollection
+            state={state}
             decks={state.decks}
             updateState={updateState} />;
     } else if (state.showCardView) {

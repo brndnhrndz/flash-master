@@ -1,9 +1,21 @@
 #landing {
-    min-width: 215px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: var(--header-height) 0 0 0;
 }
 
 #landing-controls {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0 0 0;
+    width: 360px;
+}
+
+@media only screen and (max-width: 580px) and (orientation: portrait) {
+    #landing-controls {
+        flex-direction: column;
+        width: auto;
+        height: 9rem;
+    }
 }

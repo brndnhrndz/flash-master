@@ -6,10 +6,12 @@ const CardFace = ({ handleFlipClick, state }) => {
         <div
             onClick={handleFlipClick}
             id='card-face'>
+            <img />
             <p id='card-face-text'>
                 {state.activeCardFace}
             </p>
         </div >
+
     );
 };
 

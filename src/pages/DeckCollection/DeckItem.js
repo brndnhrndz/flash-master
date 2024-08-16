@@ -1,13 +1,15 @@
 import React from 'react';
+import '../../assets/DeckItem.css';
 
 const DeckItem = ({ deck, updateState }) => {
     const handleDeckClick = () => {
         updateState({
+            showDeckCollection: false,
+            showCardView: true,
             activeDeck: deck,
             activeCard: deck.cards[0],
             activeCardFace: deck.cards[0].front,
-            showDeckCollection: false,
-            showCardView: true,
+            activeComponent: 3
         });
     };
 

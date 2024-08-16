@@ -1,24 +1,10 @@
 import React from 'react';
+import Header from '../../components/Header.js';
 import CardFace from './CardFace.js';
-import '../../assets/CardView.css'
+import '../../assets/CardView.css';
 
 const CardView = ({ state, updateState }) => {
-    const handleCardCollectionClick = () => {
-        updateState({
-            showCardView: false,
-            showCardCollection: true
-        });
-    };
-
-    const handleReturnClick = () => {
-        updateState({
-            showCardView: false,
-            showDeckCollection: true
-        });
-    };
-
     const handleFlipClick = () => {
-        console.log(state.activeFaceIsFront);
         if (state.activeFaceIsFront) {
             updateState({
                 activeCardFace: state.activeCard.back,
@@ -58,46 +44,40 @@ const CardView = ({ state, updateState }) => {
         }
     };
 
+    console.log(state.activeDeck);
+
     return (
-        <div className='container'>
-            <div id='card-view'>
-                <h1 className='title'>{state.activeDeck.deckName}</h1>
+        <>
+            <Header
+                state={state}
+                updateState={updateState} />
 
-                <div id='card-view-controls'>
-                    <button
-                        type='button'
-                        className='btn'
-                        onClick={handleReturnClick}>
-                        Return
-                    </button>
-                    <button
-                        type='button'
-                        className='btn'
-                        onClick={handleCardCollectionClick}>
-                        Cards
-                    </button>
+            <div id='card-view-container'>
+                <div id='card-view'>
+                    <CardFace
+                        handleFlipClick={handleFlipClick}
+                        state={state} />
+
+                    <div id='card-face-controls-container'>
+                        <div id='card-face-controls'>
+                            <button
+                                type='button'
+                                className='btn'
+                                onClick={handlePreviousClick}>
+                                Previous
+                            </button>
+                            <button
+                                type='button'
+                                className='btn ml-btn'
+                                onClick={handleNextClick}>
+                                Next
+                            </button>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </>
 
-                <CardFace
-                    handleFlipClick={handleFlipClick}
-                    state={state} />
-
-                <div id='card-face-controls'>
-                    <button
-                        type='button'
-                        className='btn'
-                        onClick={handlePreviousClick}>
-                        Previous
-                    </button>
-                    <button
-                        type='button'
-                        className='btn'
-                        onClick={handleNextClick}>
-                        Next
-                    </button>
-                </div>
-            </div >
-        </div>
     );
 };
 

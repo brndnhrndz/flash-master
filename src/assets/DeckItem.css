@@ -1,0 +1,11 @@
+.collection-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 230px;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    box-shadow: #0000001a 0 2px 5px 0;
+    cursor: pointer;
+}

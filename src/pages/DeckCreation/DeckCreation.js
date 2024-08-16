@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import Header from '../../components/Header.js';
 
-const DeckCreation = ({ updateState }) => {
+const DeckCreation = ({ state, updateState }) => {
     const [creationState, setCreationState] = useState({
         deckName: '',
         frontText: '',
@@ -90,76 +91,81 @@ const DeckCreation = ({ updateState }) => {
     };
 
     return (
-        <div className='alt-container'>
-            <div id='deck-creation-form'>
-                <h1 className='title'>Create a Deck</h1>
+        <>
+            <Header
+                state={state}
+                updateState={updateState} />
+            <div className='alt-container'>
+                <div id='deck-creation-form'>
+                    <h1 className='title'>Create a Deck</h1>
 
-                <form>
-                    <div>
-                        <label htmlFor='deck-name-input'>Deck Name:</label>
-                        <input
-                            type='text'
-                            id='deck-name-input'
-                            name='deck-name'
-                            placeholder='Enter a deck name:'
-                            autoComplete='off'
-                            value={creationState.deckName}
-                            onChange={handleDeckNameChange} />
-                    </div>
-
-                    <div>
+                    <form>
                         <div>
-                            <label htmlFor='front-text-input'>Front:</label>
+                            <label htmlFor='deck-name-input'>Deck Name:</label>
                             <input
                                 type='text'
-                                id='front-text-input'
-                                name='front-text'
+                                id='deck-name-input'
+                                name='deck-name'
+                                placeholder='Enter a deck name:'
                                 autoComplete='off'
-                                value={creationState.frontText}
-                                onChange={handleFrontTextChange} />
+                                value={creationState.deckName}
+                                onChange={handleDeckNameChange} />
                         </div>
 
                         <div>
-                            <label htmlFor='back-text-input'>Back:</label>
-                            <input
-                                type='text'
-                                id='back-text-input'
-                                name='back-text'
-                                autoComplete='off'
-                                value={creationState.backText}
-                                onChange={handleBackTextChange} />
+                            <div>
+                                <label htmlFor='front-text-input'>Front:</label>
+                                <input
+                                    type='text'
+                                    id='front-text-input'
+                                    name='front-text'
+                                    autoComplete='off'
+                                    value={creationState.frontText}
+                                    onChange={handleFrontTextChange} />
+                            </div>
+
+                            <div>
+                                <label htmlFor='back-text-input'>Back:</label>
+                                <input
+                                    type='text'
+                                    id='back-text-input'
+                                    name='back-text'
+                                    autoComplete='off'
+                                    value={creationState.backText}
+                                    onChange={handleBackTextChange} />
+                            </div>
                         </div>
-                    </div>
 
-                    <button
-                        type='button'
-                        onClick={handlePreviousClick}>
-                        Previous
-                    </button>
-                    <button
-                        type='button'
-                        onClick={handleNextClick}>
-                        Next
-                    </button>
-                    <button
-                        type='button'
-                        onClick={handleSaveClick}>
-                        Save Card
-                    </button>
-                    <button
-                        type='button'
-                        onClick={handleRemoveClick}>
-                        Remove Card
-                    </button>
-                    <button
-                        type='button'
-                        onClick={handleFinishClick}>
-                        Finish
+                        <button
+                            type='button'
+                            onClick={handlePreviousClick}>
+                            Previous
+                        </button>
+                        <button
+                            type='button'
+                            onClick={handleNextClick}>
+                            Next
+                        </button>
+                        <button
+                            type='button'
+                            onClick={handleSaveClick}>
+                            Save Card
+                        </button>
+                        <button
+                            type='button'
+                            onClick={handleRemoveClick}>
+                            Remove Card
+                        </button>
+                        <button
+                            type='button'
+                            onClick={handleFinishClick}>
+                            Finish
 
-                    </button>
-                </form>
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

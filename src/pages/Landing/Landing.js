@@ -1,26 +1,31 @@
 import React from 'react';
-import '../../assets/Landing.css'
+import Header from '../../components/Header.js';
+import '../../assets/Landing.css';
 
-const Landing = ({ updateState }) => {
+const Landing = ({ state, updateState }) => {
     const handleCreateDeckClick = () => {
         updateState({
             showLanding: false,
-            showDeckCreation: true
+            showDeckCreation: true,
+            activeComponent: 1
         });
     };
 
     const handleShowDecksClick = () => {
         updateState({
             showLanding: false,
-            showDeckCollection: true
+            showDeckCollection: true,
+            activeComponent: 2
         });
     };
 
     return (
-        <div className='container'>
+        <>
+            <Header
+                state={state}
+                updateState={updateState} />
+                
             <div id='landing'>
-                <h1 className='title'>Flash Master</h1>
-
                 <div id='landing-controls'>
                     <button
                         type='button'
@@ -38,7 +43,8 @@ const Landing = ({ updateState }) => {
                     </button>
                 </div>
             </div>
-        </div>
+        </>
+
 
     );
 };
